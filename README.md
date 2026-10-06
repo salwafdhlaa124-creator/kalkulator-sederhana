@@ -1,51 +1,34 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+# Kalkulator Sederhana
 
-public class Kalkulator extends JFrame implements ActionListener {
+Simple calculator built with **Java Swing**.
 
-    JTextField layar;
-    double angkaPertama = 0;
-    String operator = "";
+Project ini merupakan kalkulator sederhana dengan tampilan GUI
+yang dibuat menggunakan Java Swing.
 
-    public Kalkulator() {
+## Features
 
-        // Judul aplikasi
-        setTitle("Kalkulator Sederhana");
+| **Feature**        | **Description**                  |
+| ------------------ | -------------------------------- |
+| Addition           | Penjumlahan `+`                  |
+| Subtraction        | Pengurangan `-`                  |
+| Multiplication     | Perkalian `*`                    |
+| Division           | Pembagian `/`                    |
+| Delete             | Menghapus angka terakhir `DEL`   |
+| Clear              | Menghapus dan mereset kalkulator `C` |
+| Equal              | Menampilkan hasil perhitungan `=`|
+| GUI                | Tampilan kalkulator menggunakan Java Swing |
 
-        // Ukuran jendela
-        setSize(350, 450);
+## Technologies
 
-        // Posisi di tengah layar
-        setLocationRelativeTo(null);
+| Technology | Usage                    |
+| ---------- | ------------------------ |
+| Java       | Programming language     |
+| Java Swing | Graphical User Interface |
+| AWT        | UI components and events |
 
-        // Menutup aplikasi ketika tombol X ditekan
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+## Project Structure
 
-        // Layout utama
-        setLayout(new BorderLayout(10, 10));
-
-        // =========================
-        // LAYAR KALKULATOR
-        // =========================
-        layar = new JTextField();
-        layar.setFont(new Font("Arial", Font.BOLD, 30));
-        layar.setHorizontalAlignment(JTextField.RIGHT);
-        layar.setEditable(false);
-
-        add(layar, BorderLayout.NORTH);
-
-        // =========================
-        // TOMBOL KALKULATOR
-        // =========================
-        JPanel panelTombol = new JPanel();
-        panelTombol.setLayout(new GridLayout(4, 4, 5, 5));
-
-        String[] tombol = {
-            "7", "8", "9", "/",
-            "4", "5", "6", "*",
-            "1", "2", "3", "-",
-            "C", "0", "=", "+"
-        };
-
-        
+```text
+kalkulator-sederhana/
+├── Kalkulator.java
+└── README.md
