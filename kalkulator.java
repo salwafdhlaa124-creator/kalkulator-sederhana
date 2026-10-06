@@ -47,3 +47,30 @@ public class kalkulator {
         input.close();
     }
 }
+
+public class kalkulator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        OperasiKalkulator kalkulator = new OperasiKalkulator();
+
+        System.out.print("Masukkan angka pertama: ");
+        kalkulator.angka1 = input.nextDouble();
+
+        System.out.print("Masukkan angka kedua: ");
+        kalkulator.angka2 = input.nextDouble();
+
+        System.out.println("\n=== HASIL PERHITUNGAN ===");
+        System.out.println("Penjumlahan : " + kalkulator.tambah());
+        System.out.println("Pengurangan : " + kalkulator.kurang());
+        System.out.println("Perkalian   : " + kalkulator.kali());
+
+        if (kalkulator.angka2 != 0) {
+            System.out.println("Pembagian   : " + kalkulator.bagi());
+        } else {
+            System.out.println("Pembagian   : Tidak bisa dibagi 0");
+        }
+
+        input.close();
+    }
+}
