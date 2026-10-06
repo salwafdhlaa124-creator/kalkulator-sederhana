@@ -34,7 +34,7 @@ public class Kalkulator extends JFrame implements ActionListener {
             panel.add(b);
         }
 
-    add(panel, BorderLayout.CENTER);
+        add(panel, BorderLayout.CENTER);
 
         JButton samaDengan = new JButton("=");
         samaDengan.setFont(new Font("Arial", Font.BOLD, 22));
