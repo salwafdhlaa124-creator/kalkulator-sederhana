@@ -33,3 +33,62 @@ public class Kalkulator extends JFrame implements ActionListener {
             b.addActionListener(this);
             panel.add(b);
         }
+
+    add(panel, BorderLayout.CENTER);
+
+        JButton samaDengan = new JButton("=");
+        samaDengan.setFont(new Font("Arial", Font.BOLD, 22));
+        samaDengan.addActionListener(this);
+        add(samaDengan, BorderLayout.SOUTH);
+
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String tombol = e.getActionCommand();
+
+        if (tombol.matches("[0-9]")) {
+            layar.setText(
+                layar.getText().equals("0") ? tombol : layar.getText() + tombol
+            );
+        }
+        else if (tombol.equals("C")) {
+            layar.setText("0");
+            angkaPertama = 0;
+            operator = "";
+        }
+        else if (tombol.equals("DEL")) {
+            String teks = layar.getText();
+            layar.setText(teks.length() > 1 ? teks.substring(0, teks.length() - 1) : "0");
+        }
+        else if ("+-*/".contains(tombol)) {
+            angkaPertama = Double.parseDouble(layar.getText());
+            operator = tombol;
+            layar.setText("0");
+        }
+        else if (tombol.equals("=") && !operator.isEmpty()) {
+            double angkaKedua = Double.parseDouble(layar.getText());
+            double hasil = 0;
+
+            switch (operator) {
+                case "+": hasil = angkaPertama + angkaKedua; break;
+                case "-": hasil = angkaPertama - angkaKedua; break;
+                case "*": hasil = angkaPertama * angkaKedua; break;
+                case "/":
+                    if (angkaKedua == 0) {
+                        layar.setText("Error");
+                        return;
+                    }
+                    hasil = angkaPertama / angkaKedua;
+                    break;
+            }
+
+            layar.setText(String.valueOf(hasil));
+            operator = "";
+        }
+    }
+
+    public static void main(String[] args) {
+        new Kalkulator();
+    }
+}
