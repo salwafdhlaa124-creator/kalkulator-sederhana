@@ -32,3 +32,11 @@ yang dibuat menggunakan Java Swing.
 kalkulator-sederhana/
 ├── Kalkulator.java
 └── README.md
+
+Run
+Compile the program:
+
+javac SwingCalculator.java
+Run:
+
+java SwingCalculator
