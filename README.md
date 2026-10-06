@@ -32,6 +32,7 @@ yang dibuat menggunakan Java Swing.
 kalkulator-sederhana/
 ├── Kalkulator.java
 └── README.md
+└── Screenshot
 
 ## Run
 
