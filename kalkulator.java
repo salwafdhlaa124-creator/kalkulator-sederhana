@@ -1,76 +1,35 @@
-import java.util.Scanner;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-class OperasiKalkulator {
-    double angka1;
-    double angka2;
+public class Kalkulator extends JFrame implements ActionListener {
+    JTextField layar = new JTextField("0");
+    double angkaPertama;
+    String operator = "";
 
-    double tambah() {
-        return angka1 + angka2;
-    }
+    public Kalkulator() {
+        setTitle("Kalkulator Sederhana");
+        setSize(350, 450);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout(5, 5));
 
-    double kurang() {
-        return angka1 - angka2;
-    }
+        layar.setFont(new Font("Arial", Font.BOLD, 30));
+        layar.setHorizontalAlignment(JTextField.RIGHT);
+        layar.setEditable(false);
+        add(layar, BorderLayout.NORTH);
 
-    double kali() {
-        return angka1 * angka2;
-    }
+        JPanel panel = new JPanel(new GridLayout(4, 4, 5, 5));
+        String[] tombol = {
+            "7","8","9","/",
+            "4","5","6","*",
+            "1","2","3","-",
+            "C","0","DEL","+"
+        };
 
-    double bagi() {
-        return angka1 / angka2;
-    }
-}
-
-public class kalkulator {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        OperasiKalkulator kalkulator = new OperasiKalkulator();
-
-        System.out.print("Masukkan angka pertama: ");
-        kalkulator.angka1 = input.nextDouble();
-
-        System.out.print("Masukkan angka kedua: ");
-        kalkulator.angka2 = input.nextDouble();
-
-        System.out.println("\n=== HASIL PERHITUNGAN ===");
-        System.out.println("Penjumlahan : " + kalkulator.tambah());
-        System.out.println("Pengurangan : " + kalkulator.kurang());
-        System.out.println("Perkalian   : " + kalkulator.kali());
-
-        if (kalkulator.angka2 != 0) {
-            System.out.println("Pembagian   : " + kalkulator.bagi());
-        } else {
-            System.out.println("Pembagian   : Tidak bisa dibagi 0");
+        for (String s : tombol) {
+            JButton b = new JButton(s);
+            b.setFont(new Font("Arial", Font.BOLD, 22));
+            b.addActionListener(this);
+            panel.add(b);
         }
-
-        input.close();
-    }
-}
-
-public class kalkulator {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        OperasiKalkulator kalkulator = new OperasiKalkulator();
-
-        System.out.print("Masukkan angka pertama: ");
-        kalkulator.angka1 = input.nextDouble();
-
-        System.out.print("Masukkan angka kedua: ");
-        kalkulator.angka2 = input.nextDouble();
-
-        System.out.println("\n=== HASIL PERHITUNGAN ===");
-        System.out.println("Penjumlahan : " + kalkulator.tambah());
-        System.out.println("Pengurangan : " + kalkulator.kurang());
-        System.out.println("Perkalian   : " + kalkulator.kali());
-
-        if (kalkulator.angka2 != 0) {
-            System.out.println("Pembagian   : " + kalkulator.bagi());
-        } else {
-            System.out.println("Pembagian   : Tidak bisa dibagi 0");
-        }
-
-        input.close();
-    }
-}
