@@ -40,3 +40,10 @@ javac SwingCalculator.java
 Run:
 
 java SwingCalculator
+
+## Run
+
+Compile the program:
+
+```bash
+javac Kalkulator.java
