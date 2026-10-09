@@ -72,4 +72,4 @@ java Kalkulator
 
 1. [Aisya Ghaisany] - [250810701100029]
 2. [Salwa Fadhilla] - [250810701100103]
-3. [Annisa Fadhilah]- [250810701100087]
+3. [Annisa Fadhilah]- [250810701100086]
