@@ -34,7 +34,7 @@ kalkulator-sederhana/
 └── README.md
 └── Screenshot
 
-## Run
+**Run**
 
 Compile the program:
 
